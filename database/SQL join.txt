@@ -1,0 +1,6 @@
+SQL JOIN :  CRUD 편의를 위해  테이블 합치기
+1. LEFT OUTER JOIN : 왼쪽(a) 있는거 합치기    // 중요
+SELECT ~ FROM a LEFT JOIN b ON a.c = b.d  WHERE c = 1
+2. INNER JOIN : 양쪽에 모두 있는거만 합치기  // 중요 나머지는 중요 ㄴㄴ
+3. FULL OUTER JOIN : (LEFT JOIN) UNION (RIGHT JOIN) : LEFT,RIGHT JOIN을 합친후 중복제거
+4. EXCLUSIVE LEFT JOIN : LEFT만 존재하는것만 : SELECT ~ FROM a LEFT JOIN b ON a.c = b.d  WHERE b.d is NULL

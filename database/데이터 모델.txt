@@ -1,0 +1,34 @@
+데이터모델링 = 현실-> 컴퓨터 이사
+
+1. 업부파악
+UI, 기획서(ovenapp)
+
+2. 개념적 모델링(ER 다이어그램 작성)
+ER다이어그램(개체,속성,관계) ->draw.io 사용
+(1) 개체-사각형
+(2) 속성- 타원형 : 개체에 포함된거나 특징 / 식별자(고유성 속성)> primary key
+후보키, primary key(밑줄표시), 대체키, 중복키(속성값 식별),외래키
+(3) 관계- 마름모 : 개체간 관계
+cardinality : 대응관계 ex)1:1, 1:N, N:M
+optionality : 없을수도 있다(o), 필수적이다(|)
+erd.yah.ac 참조
+
+3. 논리적 데이터 모델링(ER다이어그램->관계형데이터베이스 모델에 맞게 전환)
+entity-> table / attribute->column(key,domain)/ relation->PK,FK / tuple->row
+ER master 사용
+entity-> table
+attribute -> column (primary key 인지, domain 설정)
+relation -> PK,FK(의존)  /  1:1, 1:N, N:M
+정규화 (표->관계형 데이터), http://bit.ly/2wV2SFj
+1NF : Atomic column(값1개), 쪼개기
+2NF : No partial dependencies(중복키 ㄴㄴ),  부분종속제거(중복되는 것만 따로빼서 중복제거)
+3NF : No transitive dependencies(이행적종속성 제거), 속성은 1가지에만 의존해야됨
+
+4. 물리적 데이터 모델링(DB선택, 실제 표 작성)
+역정규화(정규화 성능이 떨어질때만) - http://bit.ly/2WLMCko
+컬럼 중복 : join 줄이기
+파생 컬럼의 형성 : 계산작업 줄이기(ex) GROUP BY)
+컬럼을 기준으로 테이블을 분리 
+관계 역정규화
+
+

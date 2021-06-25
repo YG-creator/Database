@@ -1,0 +1,51 @@
+bitnami 비번 : 용국95
+
+1. mysql 소개
+(1) 특징 : 오픈소스,web,관계형 데이터베이스,표,CRUD,보안,권한부여
+structured query language
+(2) 관계형 데이터베이스
+장점 : 중복데이터 제거 
+단점 : 표를 2개 봐야됨->MySQL이 해결
+합치기 : SELECT * FROM 표1 LEFT JOIN 표2 ON 표1.속성=표2.속성;
+분리하기(http://opentutorials.org/module/3300/19521) 참고
+(3) 구조
+데이터베이스,스키마 = 표들의 집합(연관된 data group)
+데이터베이스 서버 = 데이터베이스 group
+(4) 클라이언트, 서버
+클라이언트 ->요청   /   반응 <-서버
+MySQL 클라이언트
+(1) MySQL workbench : UI기반
+(2) MySQL monitor : 명령어기반
+
+2. CRUD
+(0) 처음 설정
+cd C:\bitnami\wamp\mysql\bin
+서버접속 : mysql -uroot -p
+DATABASE 생성 후 USE database이름;
+
+(1) 생성
+CREATE DATABASE 이름;
+테이블 생성 : CREATE TABLE 이름(속성이름 datatype option PRIMARY KEY)
+datatype : INT(),VARCHAR()
+option : 빈칸 ㄴㄴ(NOT NULL), NULL, 자동증가(AUTO_INCREMNT)
+PRIMARY KEY()
+값 생성 : INSERT INTO TABLE이름 (속성1,속성2...) VALUES(값들 입력);
+속성이름 바꾸기 : A AS B
+(2) 읽기
+SHOW DATABASES; 
+SELECT * FROM TABLE이름;    :  전체 읽기
+SELECT 원하는속성 FROM TABLE이름;   : 원하는 속성만 읽기
+WHERE 속성이름 = 값  : 원하는 행만 읽기
+ORDER BY 속성이름 DESC or ASC    : 정렬
+LIMIT 숫자 :  몇개까지
+(3) UPDATE
+UPDATE TABLE이름 SET 바꿀 속성=원하는값, WHERE ~~;
+(4)삭제
+DROP FROM TABLE이름 WHERE 속성=값;
+
+3. 설계할때 주의할거
+index
+table modeling
+backup
+cloud
+programming : python,PHP,java  mysql api
